@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package greet.v1;
+
+option go_package = "github.com/example/connectrpc-hello/gen/greet/v1;greetv1";
+option java_package = "com.example.greet.v1";
+option java_multiple_files = true;
+
+service GreetService {
+  rpc Greet(GreetRequest) returns (GreetResponse) {}
+}
+
+message GreetRequest {
+  string name = 1;
+}
+
+message GreetResponse {
+  string greeting = 1;
+}
